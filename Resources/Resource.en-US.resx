@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="AddedOn" xml:space="preserve">
+    <value>AddedOn</value>
+  </data>
+  <data name="AddNewCategory" xml:space="preserve">
+    <value>Add New Category</value>
+  </data>
+  <data name="AddNewCustomer" xml:space="preserve">
+    <value>Add New Customer</value>
+  </data>
+  <data name="AddNewInvoice" xml:space="preserve">
+    <value>Add New Invoice</value>
+  </data>
+  <data name="addProduct" xml:space="preserve">
+    <value>Add  Product</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AreyousurethatyouDeleltthisProduct" xml:space="preserve">
+    <value>Are you sure that you Delelte this Product?</value>
+  </data>
+  <data name="Areyousureyouwanttodeletethis" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="BacktoInvoices" xml:space="preserve">
+    <value>Back to Invoices</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>Category Id</value>
+  </data>
+  <data name="Categorynamecannotexceed20characters" xml:space="preserve">
+    <value>Category name can not exceed 20 characters</value>
+  </data>
+  <data name="Categorynameisrequired" xml:space="preserve">
+    <value>Category name is required</value>
+  </data>
+  <data name="ChooseaClient" xml:space="preserve">
+    <value>Choose a Client</value>
+  </data>
+  <data name="Chooseproduct" xml:space="preserve">
+    <value>Choose product</value>
+  </data>
+  <data name="ClientAddressRequired" xml:space="preserve">
+    <value>Client Address Required</value>
+  </data>
+  <data name="ClientCreated" xml:space="preserve">
+    <value>Client Created</value>
+  </data>
+  <data name="ClientDeleted" xml:space="preserve">
+    <value>Client Deleted</value>
+  </data>
+  <data name="ClientName" xml:space="preserve">
+    <value>Client Name</value>
+  </data>
+  <data name="ClientNameRequired" xml:space="preserve">
+    <value>Client Name Required</value>
+  </data>
+  <data name="ClientPhoneRequired" xml:space="preserve">
+    <value>Client Phone Required</value>
+  </data>
+  <data name="ClientUpdated" xml:space="preserve">
+    <value>Client Updated</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Do you want to continue Using the site?</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateAnewUser" xml:space="preserve">
+    <value>Create a New User</value>
+  </data>
+  <data name="CreatenewUser" xml:space="preserve">
+    <value>Create a New User</value>
+  </data>
+  <data name="CtaegoryName" xml:space="preserve">
+    <value>Please Enter Ctaegory Name</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="CustomerID" xml:space="preserve">
+    <value>Customer ID</value>
+  </data>
+  <data name="CustomerIDisrequired" xml:space="preserve">
+    <value>Customer ID is required</value>
+  </data>
+  <data name="Customernamecannotexceed100characters" xml:space="preserve">
+    <value>Customer name cannot exceed 100 characters</value>
+  </data>
+  <data name="Customernameisrequired" xml:space="preserve">
+    <value>Customer name is required</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Descriptioncannotexceed200characters" xml:space="preserve">
+    <value>Description can not exceed 200 characters</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Discountmustbeapositivevalue" xml:space="preserve">
+    <value>Discount must be a positive value</value>
+  </data>
+  <data name="Discountproduct" xml:space="preserve">
+    <value> Discount product (%)</value>
+  </data>
+  <data name="Dscount" xml:space="preserve">
+    <value>Dscount</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Editaed" xml:space="preserve">
+    <value>Editaed</value>
+  </data>
+  <data name="EditCategory" xml:space="preserve">
+    <value>Edit Category</value>
+  </data>
+  <data name="EditCustomer" xml:space="preserve">
+    <value>Edit Customer</value>
+  </data>
+  <data name="EditPrudect" xml:space="preserve">
+    <value>Edit Prudect</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email Required</value>
+  </data>
+  <data name="EnterCustomerName" xml:space="preserve">
+    <value>Enter Customer Name</value>
+  </data>
+  <data name="EnterInvoiceDiscount" xml:space="preserve">
+    <value>Enter Invoice Discount</value>
+  </data>
+  <data name="EnterproductDiscount" xml:space="preserve">
+    <value>Enter product Discount</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>FirstName</value>
+  </data>
+  <data name="FirstNameLength" xml:space="preserve">
+    <value>First Name Length less than 50</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>First Name Required</value>
+  </data>
+  <data name="fmail" xml:space="preserve">
+    <value>fmail</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>FullName</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GenderRange" xml:space="preserve">
+    <value>Gender Range</value>
+  </data>
+  <data name="GenderRequired" xml:space="preserve">
+    <value>Gender Required</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Invalid Username / Password</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Invalid Email</value>
+  </data>
+  <data name="InvalidPhone" xml:space="preserve">
+    <value>Invalid Phone</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="InvoiceCreated" xml:space="preserve">
+    <value>Invoice Created</value>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="InvoiceDetails" xml:space="preserve">
+    <value>Invoice Details</value>
+  </data>
+  <data name="InvoiceDiscount" xml:space="preserve">
+    <value> Invoice Discount (%)</value>
+  </data>
+  <data name="Invoicediscountmustbeapositivevalue" xml:space="preserve">
+    <value>Invoice discount must be a positive value</value>
+  </data>
+  <data name="InvoiceId" xml:space="preserve">
+    <value>Invoice Id</value>
+  </data>
+  <data name="InvoiceIdRequired" xml:space="preserve">
+    <value>Invoice Id Required</value>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>Invoices</value>
+  </data>
+  <data name="InvoiceValueAfterDiscount" xml:space="preserve">
+    <value>Invoice Value After Discount</value>
+  </data>
+  <data name="ItemCreated" xml:space="preserve">
+    <value>Product Created</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>LastName</value>
+  </data>
+  <data name="LastNameLength" xml:space="preserve">
+    <value>Last Name Length less than 50</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Last Name Required</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameCategory" xml:space="preserve">
+    <value>Name Category</value>
+  </data>
+  <data name="NameCustomer" xml:space="preserve">
+    <value>Name Customer</value>
+  </data>
+  <data name="NoCategoryAddedYet" xml:space="preserve">
+    <value>No Category Added Yet!</value>
+  </data>
+  <data name="NoCustomerAddedYet" xml:space="preserve">
+    <value>No Customer Added Yet!</value>
+  </data>
+  <data name="NoProductAddedYet" xml:space="preserve">
+    <value>No Product Added Yet!</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Passwordcannotexceed256characters" xml:space="preserve">
+    <value>Password can not exceed 256 characters</value>
+  </data>
+  <data name="Passwordrequired" xml:space="preserve">
+    <value>Password Required</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>Phone Required</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PriceAfterDiscount" xml:space="preserve">
+    <value>Price After Discount</value>
+  </data>
+  <data name="PriceProductMustGreaterthan0" xml:space="preserve">
+    <value>Price Product Must Greater than 0</value>
+  </data>
+  <data name="PriceRequired" xml:space="preserve">
+    <value>Price Required</value>
+  </data>
+  <data name="ProductDetail" xml:space="preserve">
+    <value>Product Detail</value>
+  </data>
+  <data name="ProductId" xml:space="preserve">
+    <value>Product Id</value>
+  </data>
+  <data name="ProductIDisrequired" xml:space="preserve">
+    <value>Product ID is required</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Productnamecannotexceed100characters" xml:space="preserve">
+    <value>Product name can not exceed 100 characters</value>
+  </data>
+  <data name="Productnameisrequired" xml:space="preserve">
+    <value>Product name is required</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Quantityisrequired" xml:space="preserve">
+    <value>Quantity is required</value>
+  </data>
+  <data name="Quantitymustbeatleast1" xml:space="preserve">
+    <value>Quantity must be at least 1</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Salse" xml:space="preserve">
+    <value>Salse</value>
+  </data>
+  <data name="Sava" xml:space="preserve">
+    <value>Sava</value>
+  </data>
+  <data name="SelectedCustomerId" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="SelectedCustomerIDisrequired" xml:space="preserve">
+    <value>Selected Customer ID is required</value>
+  </data>
+  <data name="SelectGender" xml:space="preserve">
+    <value>SelectGender</value>
+  </data>
+  <data name="Successed" xml:space="preserve">
+    <value>Successed</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="TotalInvoiceValue" xml:space="preserve">
+    <value>Total Invoice Value</value>
+  </data>
+  <data name="UnitPrice" xml:space="preserve">
+    <value>UnitPrice</value>
+  </data>
+  <data name="Unitpriceisrequired" xml:space="preserve">
+    <value>Unit price is required</value>
+  </data>
+  <data name="Unitpricemustbegreaterthan0" xml:space="preserve">
+    <value>Unit price must be greater than 0</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="Usernamecannotexceed100characters" xml:space="preserve">
+    <value>Username can not exceed 100 characters</value>
+  </data>
+  <data name="Usernamerequired" xml:space="preserve">
+    <value>Username Required</value>
+  </data>
+  <data name="Wrong" xml:space="preserve">
+    <value>Wrong !</value>
+  </data>
+  <data name="WrongReturnPrice" xml:space="preserve">
+    <value>Wrong Return Price</value>
+  </data>
+</root>

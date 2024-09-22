@@ -1,0 +1,143 @@
+﻿@using System.Web.Mvc
+@using System.Web.Optimization
+@using System.Web.Routing
+@using Sales.Resources
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @Resource.Salse</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        .navbar-nav {
+            flex-direction: row; /* عرض الأفقي */
+        }
+
+            .navbar-nav .nav-link {
+                color: #ffffff; /* لون النص أبيض */
+            }
+
+                /* تغيير لون النص عند الضغط عليه */
+                .navbar-nav .nav-link:focus,
+                .navbar-nav .nav-link:hover {
+                    color: black; /* النص يصبح أسود عند الضغط */
+                    background-color: rgba(255, 255, 255, 0.1); /* إضافة خلفية خفيفة */
+                }
+
+        /* لعرض الأيقونات في شكل قائمة على الهواتف */
+        media (max-width: 767.98px) {
+            .navbar-nav
+
+        {
+            flex-direction: column; /* تغيير إلى عمودي */
+        }
+
+        .invoice-item {
+            order: -1 !important; /* جعل عنصر الفاتورة أولاً */
+        }
+
+        .navbar-nav .nav-item {
+            order: 0 !important; /* تأكد من أن جميع العناصر الأخرى تأخذ ترتيبًا عاديًا */
+        }
+        }
+    </style>
+
+    @RenderSection("Styles", required: false)
+    @Styles.Render("~/Content/css")
+</head>
+
+<body>
+  
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">
+                        <i class="fas fa-home"></i> @Resource.Home
+                    </a>
+                </li>
+                <li class="nav-item invoice-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Invoice")">
+                        <i class="fas fa-file-invoice"></i> @Resource.Invoice
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Product")">
+                        <i class="fas fa-box"></i> @Resource.Products
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Category")">
+                        <i class="fas fa-tags"></i> @Resource.Categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Customer")">
+                        <i class="fas fa-users"></i> @Resource.Customers
+                    </a>
+                </li>
+                @if (Session["Username"] != null)
+                {
+                    <li class="nav-item" style="margin-left: 430px;">
+                        <a class="nav-link" href="@Url.Action("Logout", "User")">
+                            <i class="fas fa-sign-out-alt"></i> @Resource.LogOut
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - @Resource.Salse</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        let timeout;
+
+        function startTimer() {
+            timeout = setTimeout(function() {
+                if (confirm('@Resource.confirm')) {
+                    resetTimer();
+                } else {
+                    window.location.href = '@Url.Action("Logout", "User")';
+                }
+            }, 20000); // 120000 مللي ثانية = دقيقتين
+        }
+
+        function resetTimer() {
+            clearTimeout(timeout);
+            startTimer();
+        }
+
+        // بدء المؤقت عند تحميل الصفحة
+        window.onload = function() {
+            startTimer();
+
+            // إعادة تعيين العداد عند تفاعل المستخدم
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+        };
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = null;
+}
+@model Sales.Models.User
+
+
+@using Sales.Resources
+
+@*<h1>@Resource.LoginTitle</h1>*@
+
+
+@{
+    // ViewBag.Title = "Login";
+    ViewBag.Title = @Resource.LoginTitle;
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Resource.LoginTitle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* تغيير لون النص في شريط التنقل */
+        .navbar-dark .navbar-nav .nav-link {
+            color: white; /* النص أبيض */
+        }
+
+            /* تغيير لون النص عند الضغط عليه */
+            .navbar-dark .navbar-nav .nav-link:focus,
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: black; /* النص يصبح أسود عند الضغط */
+                background-color: rgba(255, 255, 255, 0.1); /* إضافة خلفية خفيفة */
+            }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-cart"></i> @Resource.Salse
+            </a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Register", "User")">
+                        <i class="fas fa-user-plus"></i> @Resource.CreatenewUser 
+                    </a>
+                </li>
+
+
+            </ul>
+
+            <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-globe"></i> اللغات
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                    <a class="dropdown-item" href="@Url.Action("ChangeLanguage", "User", new { culture = "ar-SA" })">العربية</a>
+                    <a class="dropdown-item" href="@Url.Action("ChangeLanguage", "User", new { culture = "en-US" })">English</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+
+
+
+        <h2>@Resource.LoginTitle</h2>
+
+        @using (Html.BeginForm("Login", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Username,Resource.Username)
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password,Resource.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">@Resource.LoginTitle</button>
+
+            if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-danger mt-3">@ViewBag.Message</div>
+            }
+        }
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

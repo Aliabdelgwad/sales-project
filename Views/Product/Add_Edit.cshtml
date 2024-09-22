@@ -1,0 +1,51 @@
+﻿@model Sales.ViewModels.ProductViewModels
+@using Sales.Resources
+@{
+    ViewBag.Title = @Resource.Create;
+    /*"Create"*/
+}
+
+<h3 class="text-primary">
+    @(Model.ProductId==0 ? @Resource.addProduct: @Resource.EditPrudect)
+
+</h3>
+
+<hr />
+
+@using (Html.BeginForm("Save", "Product"))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ProductId)
+
+
+    <div class="mb-3">
+        @Html.LabelFor(m => m.FullName,Resource.ProductName)
+        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FullName, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Price,Resource.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(m => m.CategoryId, Resource.CategoryId)
+        @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categories, "CategoryId", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CategoryId, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">@Resource.Sava</button>
+    </div>
+
+}
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval");
+
+}
+

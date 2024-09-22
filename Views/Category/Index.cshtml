@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Sales.Models.Category>
+@using Sales.Resources
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-primary">@Resource.Categories</h2>
+<hr />
+
+<a href="@Url.Action("Create") " class="btn btn-primary mb-4">
+
+    @Resource.AddNewCategory
+
+</a>
+<span id="Message" class="d-none">@TempData["Message"]</span>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">
+        @Resource.NoCategoryAddedYet
+    </div>
+
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-dark table-hover">
+
+            <thead>
+                <tr>
+                    <th> @Resource.CategoryId</th>
+                    <th> @Resource.NameCategory</th>
+                    <th> @Resource.Description</th>
+                    <th> @Resource.Action</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryId</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+
+                        <td>
+
+                           
+                            <div class="d-flex">
+                                <a href="@Url.Action("Edit", "Category", new { id = item.CategoryId })" class="btn btn-primary flex-fill me-2">
+                                    @Resource.Edit
+                                </a>
+
+                                <a href="javascript:;" class="btn btn-danger flex-fill js-delete" data-id="@item.CategoryId">
+                                    @Resource.Delete
+                                </a>
+                            </div>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+
+        </table>
+    </div>
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var message = $('#Message').text();
+            if (message !== '') {
+                toastr.success('@Html.Raw(Resource.Successed)');
+            }
+
+            $('.js-delete').on('click', function (e) {
+                e.preventDefault(); // منع السلوك الافتراضي للرابط
+                var btn = $(this);
+                var confirmMessage = '@Html.Raw(Resource.Areyousureyouwanttodeletethis)'; // رسالة التأكيد
+
+                if (confirm(confirmMessage)) { // إذا ضغط المستخدم على "OK"
+                    // تنفيذ عملية الحذف
+                    window.location.href = '@Url.Action("Delete", "Category", new { id = "__id__" })'.replace("__id__", btn.data('id'));
+                }
+            });
+        });
+    </script>
+}
+
+@*@section Scripts{
+        <script>
+                $(document).ready(function () {
+                    var message = $('#Message').text();
+                    if (message !== '') {
+                        toastr.success('@Resource.Successed');
+
+                    }
+
+                    $('.js-delete').on('click', function () {
+                        var btn = $(this);
+
+                        var r = confirm('@Resource.Areyousureyouwanttodeletethis');
+                        if (r) {
+                            $.ajax({
+                                url: '/api/Category/' + btn.data('id'),
+                                method: 'DELETE',
+                                success: function () {
+                                    btn.parents('tr').fadeOut(function () {
+                                        this.remove();
+                                    });
+
+                                    toastr.success('@Resource.Deleted');
+                                },
+                                error: function () {
+                                    toastr.error('@Resource.Wrong');
+                                }
+                            });
+                        }
+                    });
+                });
+        </script>
+    }*@

@@ -1,0 +1,156 @@
+﻿
+@model Sales.ViewModels.ViewModelDetails
+@using Sales.Resources
+@{
+    ViewBag.Title = "Invoice Details";
+}
+
+<h2 class="text-center">@Resource.InvoiceDetails</h2>
+
+
+<div class="form-group">
+    <label>@Resource.InvoiceId: @Model.invoice.InvoiceId</label>
+
+</div>
+
+<div class="form-group">
+    <label>@Resource.ClientName: @Model.CustomerName </label>
+</div>
+
+<div class="form-group">
+    <label>@Resource.InvoiceDiscount: @Model.InvoiceDiscount0</label>
+    
+</div>
+
+
+<h4>@Resource.ProductDetail</h4>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>@Resource.ProductName</th>
+            <th>@Resource.Quantity</th>
+            <th>@Resource.Price</th>
+            <th>@Resource.Discountproduct</th>
+            <th>@Resource.PriceAfterDiscount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var detail in Model.InvoiceDetail0)
+        {
+            <tr>
+                <td>
+                    @detail.Product.FullName
+                    @*@Model.Products.FirstOrDefault(p => p.Value == detail.ProductId.ToString())?.Text*@
+                </td>
+                <td>@detail.Quantity</td>
+                <td>@detail.UnitPrice.ToString("F2")</td>
+                <td>@detail.Discount.ToString("F2")</td>
+                <td>@(detail.UnitPrice * detail.Quantity * (1 - detail.Discount / 100))</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="form-group">
+    <label>@Resource.TotalInvoiceValue:</label>
+    <p>
+        @Model.InvoiceDetail0.Sum(d => d.UnitPrice * d.Quantity * (1 - d.Discount / 100)).ToString("F2")
+    </p>
+</div>
+
+<div class="form-group">
+    <label>@Resource.InvoiceValueAfterDiscount :</label>
+    <p>
+        @{
+            var totalBeforeDiscount = Model.InvoiceDetail0.Sum(d => d.UnitPrice * d.Quantity * (1 - d.Discount / 100));
+            var totalAfterDiscount = totalBeforeDiscount * (1 - Model.InvoiceDiscount0 / 100);
+        }
+        @totalAfterDiscount.ToString("F2")
+    </p>
+</div>
+
+<div class="form-group">
+    <a href="@Url.Action("Index", "Invoice")" class="btn btn-primary">@Resource.BacktoInvoices </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model Sales.ViewModels.InvoiceViewModel
+
+    @{
+        ViewBag.Title = "تفاصيل الفاتورة";
+    }
+
+    <h2>تفاصيل الفاتورة</h2>
+
+    <div class="form-group">
+        <label>العميل:</label>
+        <p>@Model.Customers.FirstOrDefault(c => c.Value == Model.SelectedCustomerId.ToString())?.Text</p>
+    </div>
+
+    <div class="form-group">
+        <label>خصم الفاتورة (%) :</label>
+        <p>@Model.InvoiceDiscount</p>
+    </div>
+
+    <h4>تفاصيل الأصناف</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الصنف</th>
+                <th>الكمية</th>
+                <th>السعر</th>
+                <th>الخصم على الصنف (%)</th>
+                <th>السعر بعد الخصم</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detail in Model.InvoiceDetails)
+            {
+                <tr>
+                    <td>
+                        @Model.Products.FirstOrDefault(p => p.Value == detail.ProductId.ToString())?.Text
+                    </td>
+                    <td>@detail.Quantity</td>
+                    <td>@detail.UnitPrice.ToString("F2")</td>
+                    <td>@detail.Discount.ToString("F2")</td>
+                    <td>@(detail.UnitPrice * detail.Quantity * (1 - detail.Discount / 100)).ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <label>قيمة الفاتورة الكلية:</label>
+        <p>
+            @Model.InvoiceDetails.Sum(d => d.UnitPrice * d.Quantity * (1 - d.Discount / 100)).ToString("F2")
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>قيمة الفاتورة بعد الخصم:</label>
+        <p>
+            @{
+                var totalBeforeDiscount = Model.InvoiceDetails.Sum(d => d.UnitPrice * d.Quantity * (1 - d.Discount / 100));
+                var totalAfterDiscount = totalBeforeDiscount * (1 - Model.InvoiceDiscount / 100);
+            }
+            @totalAfterDiscount.ToString("F2")
+        </p>
+    </div>
+
+    <div class="form-group">
+        <a href="@Url.Action("Index", "Invoice")" class="btn btn-primary">رجوع إلى القائمة</a>
+    </div>*@
